@@ -1,0 +1,72 @@
+'''6. HAFTA ODEVLER
+
+ODEV 1: Sayi Tahmin
+      -Kullanicidan aklindan 0-100 araliginda bir sayi tutmasini isteyin.
+      -Yazdiginiz kod ile bu sayiyi tahmin etmeye calisin.
+      -Tahmin sonucunda, kullanicidan alacaginiz input, pc'nin tahmin ettigi sayi kullanicinin belirledigi sayidan buyukse kullanici daha dusuk sayi tahmin etmelisin manasinda "-" seklinde olsun, pc'nin tahmin ettigi sayi kullanicinin belirledigi sayidan kucukse "+" seklinde olsun.
+      -Pc'nin tahmini dogru oldugunda da kullanicidan bunu belirtebilecegi bir input isteyin.
+      -Gelistireceginiz algoritma sayesinde kullanicinin belirledigi sayiyi en az hamlede bilmeye calisin :)
+      Ornek:
+          Kullanicinin aklindan tuttugu sayi: 56 (kullanicidan bunun icin bir input almayacagiz sadece
+          aklinizdan bir sayi belirlemis iseniz oyunumuza baslayabiliriz seklinde bir input alabiliriz.
+          Yani belirledigi sayiyi sisteme girmesini istemiyoruz.)
+          Pc'nin tahmini = 89
+          Kullanicinin inputu = -
+          Pc'nin tahmini = 45
+          Kullanicinin inputu = +
+          Pc'nin tahmini = 56
+          Kullanicinin inputu =Enter'''
+
+
+import time#time modulleri cagriliyor
+import random#random modulleri cagriliyor
+input("aklinizdan 1-100 araliginda bir sayi belirlemis iseniz oyunumuza baslayabiliriz\n"
+      "oyunu baslatmak icin enter tusuna basiniz")
+
+
+a=(random.randint(0,99))#0 ila 100 arasinda deger seciyoruz
+liste1=[99]#listelerden birinie buyuk degerlerimizi koyuyoruz
+liste2=[0]#kucuk degerlerimizi listeliyoruz
+print(a)
+k=0
+while True:
+    kullanici_cevabi = input("sayi tahmini tutmus oldugunuz sayidan kucuk ise + buyuk ise  - isaretine basiniz\n"
+                             "tahmininiz dogri ise cikis icin q tusuna basiniz")
+    k+=1
+
+    if kullanici_cevabi == "q":
+        print("bilgisayar {} inci denemede bildi.".format(k))
+        print("sistemden cikiliyor..")
+        time.sleep(2)
+        break
+
+
+    if kullanici_cevabi=="-":
+        liste1.append(a)#bilgisyarin tahmin ettigi deger buyuk oldugu icin listemize ekleniyor
+        liste1.sort()#kucukten buyuge siralaniyor
+
+        a= random.randint((liste2[-1])+1,(liste1[0])-1)#listelerde aralik belirlerken kucuk olanin 1 fazlasi buyuk olanin 1 eksigi alinir
+
+        print(a)
+
+
+    elif kullanici_cevabi=="+":
+        liste2.append(a)
+        liste2.sort()
+        a = random.randint((liste2[-1]) + 1, (liste1[0]) - 1)
+
+        print(a)
+
+    else:
+        print("\n.....hatali giris yaptiniz tekrar deneyiniz.....\n")
+
+
+
+
+
+
+
+
+
+
+

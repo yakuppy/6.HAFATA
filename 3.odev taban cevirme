@@ -1,0 +1,53 @@
+'''ODEV 3:TABAN CEVIRME
+
+yazacaginiz kod asagidaki menu islemlerini gerceklestirecektir.
+
+1-İkilik tabandan onluk tabana çevirme
+2-Onluk tabandan ikilik tabana çevirme
+3-ikilik tabandan on altılık tabana çevirme
+4-On altılık tabandan ikilik tabana çevirme
+5-CIKIS'''
+
+print('''    1-İkilik tabandan onluk tabana çevirme
+   2-Onluk tabandan ikilik tabana çevirme
+   3-ikilik tabandan on altılık tabana çevirme
+   4-On altılık tabandan ikilik tabana çevirme
+   5-CIKIS''')
+
+while True:
+
+    secenek=input("yapmak sitediginiz islem numarasini belirtiniz    :")
+
+    if secenek=="1":
+        sayi=int(input("cevirmek istediginiz sayiyi yaziniz  :"))
+        a=int(sayi)
+        print("ikilik tabandaki {} sayisi  onluk tabanda {} sayisina esittir".format(sayi,a))
+
+
+
+    elif secenek=="2":
+        sayi=int(input("cevirmek istediginiz sayiyi yaziniz  :"))
+        a=bin(sayi)
+        print("onluk tabandaki {} sayisi  ikilik tabanda {} sayisina esittir".format(sayi,a))
+
+
+    elif secenek == "3":
+        sayi = int(input("cevirmek istediginiz sayiyi yaziniz  :"))
+        a = hex(sayi)
+        print("ikilik tabandaki {} sayisi  onaltilik tabanda {} sayisina esittir".format(sayi, a))
+
+    elif secenek == "4":
+        sayi = int(input("cevirmek istediginiz sayiyi yaziniz  :"))
+        a = bin(sayi)
+        print("onaltilik tabandaki  {} sayisi  ikilik tabanda {} sayisina esittir".format(sayi, a))
+
+    elif secenek=="5":
+        print("sistemden cikiliyor..")
+        break
+
+
+
+
+
+
+
